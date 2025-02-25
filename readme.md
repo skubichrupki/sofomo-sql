@@ -7,7 +7,7 @@
 - nulls to 0
 - using postgreSQL
 
-### result table:
+### result schema:
 - dimension_1 (char)
 - dimension_2 (char)
 - measure_1 (integer) (sum)
@@ -21,6 +21,11 @@ concerns:
 - solution 1: allow duplicated records in map table (inflates sum values on measures)
 - solution 2: select distinct records from map table (i think this is the correct one, but would contact for clarification)
 - using postgreSQL
+
+## intuition:
+- use cte to correct the columns in tables a and b
+- group by sums in ctes for corrected a and b
+- use full join have the records from both a and b tables
 
 ## files:
 - solution_1.sql - solution with duplicated records from map table
