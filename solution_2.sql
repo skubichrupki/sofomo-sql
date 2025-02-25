@@ -33,4 +33,5 @@ coalesce(ca.dimension_1, cb.dimension_1) as dimension_1
 ,coalesce(measure_2_sum, 0) as measure_2
 from corrected_a as ca
 full join corrected_b as cb on ca.dimension_1 = cb.dimension_1
+    and ca.dimension_2 = cb.dimension_2
 order by dimension_1
